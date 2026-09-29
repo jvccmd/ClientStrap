@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self';">
+  <title>ClientStrap</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-small">
+        <img src="assets/clientstrap-logo.png" alt="ClientStrap logo" onerror="this.style.display='none'">
+        <span>ClientStrap</span><span class="pill">DESKTOP</span>
+      </div>
+      <div class="window-caption">ROBLOX LAUNCHER</div>
+    </header>
+    <main class="dashboard">
+      <section class="identity">
+        <div class="logo-wrap">
+          <img src="assets/clientstrap-logo.png" alt="ClientStrap logo" onerror="this.style.display='none'">
+          <div class="logo-fallback">C</div>
+        </div>
+        <div>
+          <p class="eyebrow">YOUR ROBLOX, YOUR WAY</p>
+          <h1>ClientStrap</h1>
+          <p class="version">Desktop launcher <span class="dot"></span> <span id="client-version">Roblox manages client updates</span></p>
+          <p class="subtitle">A clean home for launching Roblox and Roblox Studio.</p>
+          <div class="links">
+            <button class="text-link" data-url="https://www.roblox.com/">ⓘ &nbsp; Roblox Website</button>
+            <button class="text-link" data-url="https://create.roblox.com/">▣ &nbsp; Creator Hub</button>
+            <button class="text-link" data-url="https://devforum.roblox.com/">✦ &nbsp; Developer Forum</button>
+          </div>
+        </div>
+      </section>
+      <section class="actions">
+        <button class="action-card primary" id="launch-roblox">
+          <span class="action-icon">➜</span>
+          <span class="action-copy"><strong>Launch Roblox</strong><small>Open the official Roblox app</small></span>
+          <span class="chevron">›</span>
+        </button>
+        <button class="action-card" id="launch-studio">
+          <span class="action-icon">⚒</span>
+          <span class="action-copy"><strong>Launch Roblox Studio</strong><small>Create and build experiences</small></span>
+          <span class="chevron">›</span>
+        </button>
+        <button class="action-card" id="configure">
+          <span class="action-icon">⚙</span>
+          <span class="action-copy"><strong>Configure settings</strong><small>Choose your launcher preferences</small></span>
+          <span class="chevron">›</span>
+        </button>
+        <div class="help-card">
+          <span class="help-icon">?</span>
+          <div><strong>Having an issue?</strong><small>Open Roblox support or the Creator Hub.</small></div>
+          <button id="help" aria-label="Open help">›</button>
+        </div>
+      </section>
+    </main>
+    <footer><span><i class="status-dot"></i> ClientStrap is ready</span><span>Uses your official Roblox installation</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="settings-dialog">
+    <div class="dialog-head"><div><p class="eyebrow">PREFERENCES</p><h2>Configure settings</h2></div><button class="close" id="close-settings" aria-label="Close">×</button></div>
+    <label class="setting-row"><span><strong>Show version information</strong><small>Display version status on the home screen.</small></span><input type="checkbox" id="show-version" checked></label>
+    <p class="note">This starter build does not modify Roblox files or force a client version. Roblox manages its own client updates.</p>
+    <button class="save-btn" id="save-settings">Save preferences</button>
+  </dialog>
+  <script src="renderer.js"></script>
+</body>
+</html>
