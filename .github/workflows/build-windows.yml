@@ -1,7 +1,11 @@
 
 name: Build ClientStrap for Windows
 
-on: [workflow_dispatch]
+'on':
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
